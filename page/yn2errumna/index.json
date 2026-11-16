@@ -1,0 +1,40 @@
+{
+  "id": "yn2errumna",
+  "name": {
+    "tr": "Hizmetler",
+    "en": "Services",
+    "ar": "الخدمات"
+  },
+  "description": {
+    "tr": "Bilgiler genel bilgilendirme amaçlıdır; mali müşavirlik görüşü yerine geçmez. İçerik kurgusaldır.",
+    "en": "Information is general and does not replace professional accounting advice. Content is fictional.",
+    "ar": "المعلومات عامة ولا تغني عن الاستشارة المحاسبية المهنية. المحتوى افتراضي."
+  },
+  "keyword": {
+    "tr": "Kurgusal demo verileri",
+    "en": "Fictional demo figures",
+    "ar": "بيانات تجريبية افتراضية"
+  },
+  "path": "hizmetler",
+  "icon": "work",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "pvo09t",
+      "fdivze"
+    ],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Hizmetler",
+    "en": "Services",
+    "ar": "الخدمات"
+  },
+  "date": "2026-11-16T16:02:10.442Z",
+  "update": "2026-11-16T16:14:17.999Z"
+}

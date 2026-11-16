@@ -1,0 +1,29 @@
+{
+  "name": "Mizan Mali Müşavirlik",
+  "short_name": "Mizan Mali M",
+  "description": "Mizan Mali Müşavirlik: beyanname, bordro, defter kayıtları ve şirket kuruluşu; beyanname takvimi ve ofis randevusu. Demo site; içerik kurgusaldır.",
+  "start_url": "/tr/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4A2C5E",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "/img/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

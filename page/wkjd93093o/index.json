@@ -1,0 +1,40 @@
+{
+  "id": "wkjd93093o",
+  "name": {
+    "tr": "Kadro",
+    "en": "Team",
+    "ar": "الفريق"
+  },
+  "description": {
+    "tr": "Vergi, bordro ve kayıt uzmanları (kurgusal).",
+    "en": "Tax, payroll and records specialists (fictional).",
+    "ar": "مختصو الضرائب والرواتب والقيود (افتراضيون)."
+  },
+  "keyword": {
+    "tr": "ekip, kadro",
+    "en": "team, staff",
+    "ar": "فريق، طاقم"
+  },
+  "path": "ekip",
+  "icon": "groups",
+  "category": "hakkimizda",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "ers7z0",
+      "fdivze"
+    ],
+    "footer": []
+  },
+  "index": 2,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Kadro",
+    "en": "Team",
+    "ar": "الفريق"
+  },
+  "date": "2026-11-16T16:02:10.451Z",
+  "update": "2026-11-16T16:14:18.006Z"
+}
