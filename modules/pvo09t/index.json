@@ -1,0 +1,57 @@
+{
+  "name": "Hizmet Süre Karşılaştırma — standart/acil anahtarlı bilet kartları",
+  "description": "Üstte iki konumlu hap anahtar (Standart · Acil); altta delikli bilet biçiminde hizmet kartları: ikon, ad, açıklama, kapsam maddeleri ve koparma çizgisinin altında süre + fiyat satırı. Anahtar değişince her kartın satırı o modun süresi/fiyatına döner, acil modda kartlar vurgu çerçevesi alır. JS yoksa iki satır birlikte görünür. Aynı hizmetin iki teslim modunu karşılaştırır: hizmet-satir-tablo ve hizmet-fiyat-listesi tek fiyat gösterirken burada süre/fiyat çifti anahtarla değişir (role=radio hap anahtar); bilet kesimi ve koparma çizgisi ailedeki hiçbir kart iskeletinde yok. Metinler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Veri yoksa blok basılmaz.",
+  "version": "1.0.0",
+  "icon": "bolt",
+  "category": "hizmet",
+  "subCategory": "speed-toggle",
+  "tags": [
+    "hizmet",
+    "toggle",
+    "compare",
+    "urgent",
+    "ticket",
+    "interactive",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(56px, 8vw, 104px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "bg": "var(--mx-site-surface, #f6f7f9)",
+    "text": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 70%, var(--mx-site-surface, #f6f7f9))",
+    "kartBg": "var(--mx-site-bg, #ffffff)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "standartEtiket": "",
+    "acilEtiket": "",
+    "bgcolor": "var(--mx-site-surface, #f6f7f9)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "data",
+    "alanlar": {
+      "baslik": "hizmet adı — dil sözlüğü (zorunlu; eski `ad`)",
+      "metin": "kısa açıklama — dil sözlüğü (eski `ozet`)",
+      "maddeler": "kapsam maddeleri — dil sözlüğü dizisi",
+      "ikon": "Material Symbols adı",
+      "img": "görsel yolu",
+      "alt": "görsel alt metni — dil sözlüğü",
+      "fiyat": "fiyat / «…'den başlayan» — dil sözlüğü ya da düz metin",
+      "url": "detay sayfası bağlantısı",
+      "linkMetin": "bağlantı yazısı (yoksa desing `linkMetin` / eski `ctaLabel`, o da yoksa «Devamını oku»)"
+    }
+  }
+}

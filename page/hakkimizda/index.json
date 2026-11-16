@@ -1,0 +1,48 @@
+{
+  "name": {
+    "tr": "Ofis",
+    "en": "Office",
+    "ar": "المكتب"
+  },
+  "status": "play",
+  "category": "",
+  "id": "hakkimizda",
+  "url": "",
+  "path": "hakkimizda",
+  "index": 1,
+  "icon": "info",
+  "desing": {
+    "header": [],
+    "body": [
+      "4pvk67",
+      "2vyipc",
+      "fdivze"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "Ofisin sayıları ve mükellef görüşleri (kurgusal).",
+    "en": "The office in numbers and client views (fictional).",
+    "ar": "المكتب بالأرقام وآراء العملاء (افتراضية)."
+  },
+  "spot": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "desc": {},
+  "title": {
+    "tr": "Ofis",
+    "en": "Office",
+    "ar": "المكتب"
+  },
+  "keyword": {
+    "tr": "hakkımızda",
+    "en": "about",
+    "ar": "من نحن"
+  },
+  "text": {},
+  "update": "2026-11-16T16:14:18.002Z",
+  "date": "2026-10-30"
+}

@@ -1,0 +1,134 @@
+<section class="modulex-hizmet-sure-karsilastir{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-hizmet-sure-karsilastir-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* hizmet-sure-karsilastir — Aynı hizmetin iki teslim modunu karşılaştırır: hizmet-satir-tablo ve hizmet-fiyat-listesi tek fiyat gösterirken burada süre/fiyat çifti anahtarla değişir (role=radio hap anahtar); bilet kesimi ve koparma çizgisi ailedeki hiçbir kart iskeletinde yok. */
+  .modulex-hizmet-sure-karsilastir { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-hizmet-sure-karsilastir *, .modulex-hizmet-sure-karsilastir *::before, .modulex-hizmet-sure-karsilastir *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-hizmet-sure-karsilastir :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-hizmet-sure-karsilastir :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-hizmet-sure-karsilastir :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-hizmet-sure-karsilastir :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-hizmet-sure-karsilastir img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-hizmet-sure-karsilastir) img { height: auto; }
+  .modulex-hizmet-sure-karsilastir [hidden] { display: none !important; }
+  .modulex-hizmet-sure-karsilastir :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-hizmet-sure-karsilastir :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-hizmet-sure-karsilastir-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-hizmet-sure-karsilastir-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-hizmet-sure-karsilastir--bassiz .modulex-hizmet-sure-karsilastir-bas { display: none; }
+  .modulex-hizmet-sure-karsilastir-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-hizmet-sure-karsilastir-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-hizmet-sure-karsilastir-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-hizmet-sure-karsilastir-bas { max-width: 780px; margin-inline: auto; text-align: center; justify-items: center; }
+  .modulex-hizmet-sure-karsilastir-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-hizmet-sure-karsilastir-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-hizmet-sure-karsilastir-dugme:hover { transform: translateY(-2px); }
+  .modulex-hizmet-sure-karsilastir-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-hizmet-sure-karsilastir-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-hizmet-sure-karsilastir-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-hizmet-sure-karsilastir-anahtar { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: min(100%, 380px); margin: 0 auto clamp(26px, 3vw, 40px); padding: 5px; border-radius: 999px; background: --kartBg--; box-shadow: inset 0 0 0 1px --cizgi--; }
+  .modulex-hizmet-sure-karsilastir:not(.modulex-hizmet-sure-karsilastir--js) .modulex-hizmet-sure-karsilastir-anahtar { display: none; }
+  .modulex-hizmet-sure-karsilastir-secenek { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 8px 14px; border: 0; border-radius: 999px; background: transparent; color: --text--; font: inherit; font-weight: 750; transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; }
+  .modulex-hizmet-sure-karsilastir-secenek:hover { background: color-mix(in srgb, --accent-- 10%, --kartBg--); }
+  .modulex-hizmet-sure-karsilastir-secenek[aria-checked="true"] { background: --accent--; color: --accentText--; box-shadow: 0 8px 18px -10px color-mix(in srgb, --accent-- 90%, transparent); }
+  .modulex-hizmet-sure-karsilastir-secenek[aria-checked="true"] .material-symbols-outlined { animation: modulex-hizmet-sure-karsilastir-zip 0.45s ease; }
+  @keyframes modulex-hizmet-sure-karsilastir-zip { 40% { transform: scale(1.3); } }
+  .modulex-hizmet-sure-karsilastir-secenek .material-symbols-outlined { font-size: 20px; }
+  .modulex-hizmet-sure-karsilastir-biletler { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 22px; }
+  .modulex-hizmet-sure-karsilastir-bilet { --cent: 14px; display: grid; grid-template-rows: 1fr auto; border: 2px solid transparent; border-radius: --yuvarlak--; background: --kartBg--; transition: border-color 0.35s ease, transform 0.3s ease; }
+  .modulex-hizmet-sure-karsilastir-bilet:hover { transform: translateY(-3px); }
+  .modulex-hizmet-sure-karsilastir--acil .modulex-hizmet-sure-karsilastir-bilet { border-color: --accent--; }
+  .modulex-hizmet-sure-karsilastir-govde { display: grid; align-content: start; gap: 12px; padding: 24px 24px 20px; }
+  .modulex-hizmet-sure-karsilastir-bas2 { display: flex; align-items: center; gap: 12px; }
+  .modulex-hizmet-sure-karsilastir-ikon { display: grid; place-items: center; flex: none; width: 46px; height: 46px; border-radius: 50%; border: 2px dashed --accent--; color: --accentInk--; font-size: 22px; }
+  .modulex-hizmet-sure-karsilastir-kbaslik { font-size: 1.15rem; font-weight: 750; line-height: 1.3; }
+  .modulex-hizmet-sure-karsilastir-kmetin { color: --muted--; font-size: 0.94rem; }
+  .modulex-hizmet-sure-karsilastir-koparma { position: relative; display: grid; gap: 10px; padding: 18px 24px 22px; border-block-start: 2px dashed --cizgi--; }
+  .modulex-hizmet-sure-karsilastir-koparma::before, .modulex-hizmet-sure-karsilastir-koparma::after { content: ""; position: absolute; inset-block-start: calc(var(--cent) * -1 - 1px); width: calc(var(--cent) * 2); height: calc(var(--cent) * 2); border-radius: 50%; background: --bg--; }
+  .modulex-hizmet-sure-karsilastir-koparma::before { inset-inline-start: calc(var(--cent) * -1 - 2px); }
+  .modulex-hizmet-sure-karsilastir-koparma::after { inset-inline-end: calc(var(--cent) * -1 - 2px); }
+  .modulex-hizmet-sure-karsilastir-mod { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "met tutar" "sure tutar"; align-items: center; gap: 2px 14px; }
+  .modulex-hizmet-sure-karsilastir-met { grid-area: met; display: inline-flex; align-items: center; gap: 6px; color: --muted--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .modulex-hizmet-sure-karsilastir-met .material-symbols-outlined { font-size: 17px; }
+  .modulex-hizmet-sure-karsilastir-mod--acil .modulex-hizmet-sure-karsilastir-met { color: --accentInk--; }
+  .modulex-hizmet-sure-karsilastir-sure { grid-area: sure; font-size: 1.35rem; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.2; }
+  .modulex-hizmet-sure-karsilastir-tutar { grid-area: tutar; padding: 6px 12px; border-radius: 10px; background: color-mix(in srgb, --accent-- 12%, --kartBg--); color: --accentInk--; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .modulex-hizmet-sure-karsilastir:not(.modulex-hizmet-sure-karsilastir--js) .modulex-hizmet-sure-karsilastir-mod + .modulex-hizmet-sure-karsilastir-mod { padding-block-start: 10px; border-block-start: 1px solid --cizgi--; }
+  .modulex-hizmet-sure-karsilastir--acil .modulex-hizmet-sure-karsilastir-mod--acil .modulex-hizmet-sure-karsilastir-met .material-symbols-outlined { animation: modulex-hizmet-sure-karsilastir-cak 1.6s ease-in-out infinite; }
+  .modulex-hizmet-sure-karsilastir--gel { animation: modulex-hizmet-sure-karsilastir-gel 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  @keyframes modulex-hizmet-sure-karsilastir-gel { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @keyframes modulex-hizmet-sure-karsilastir-cak { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+  @media (max-width: 768px) {
+    .modulex-hizmet-sure-karsilastir-biletler { grid-template-columns: minmax(0, 1fr); }
+    .modulex-hizmet-sure-karsilastir-govde { padding: 20px 18px 16px; }
+    .modulex-hizmet-sure-karsilastir-koparma { padding: 16px 18px 18px; }
+    .modulex-hizmet-sure-karsilastir-sure { font-size: 1.2rem; }
+  }
+  .modulex-hizmet-sure-karsilastir-git { position: relative; display: inline-flex; align-items: center; gap: 6px; width: fit-content; color: --accentInk--; font-weight: 700; text-decoration: none; transition: gap 0.25s ease; }
+  .modulex-hizmet-sure-karsilastir-git:hover { gap: 10px; }
+  .modulex-hizmet-sure-karsilastir-git .material-symbols-outlined { font-size: 18px; }
+  .modulex-hizmet-sure-karsilastir-maddeler { display: grid; gap: 6px; }
+  .modulex-hizmet-sure-karsilastir-maddeler li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.93rem; }
+  .modulex-hizmet-sure-karsilastir-maddeler .material-symbols-outlined { flex: none; margin-block-start: 1px; color: --accentInk--; font-size: 18px; }
+  .modulex-hizmet-sure-karsilastir-fiyat { color: --accentInk--; font-weight: 800; }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-hizmet-sure-karsilastir :is(.modulex-hizmet-sure-karsilastir-baslik, .modulex-hizmet-sure-karsilastir-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-hizmet-sure-karsilastir-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-hizmet-sure-karsilastir { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-hizmet-sure-karsilastir *, .modulex-hizmet-sure-karsilastir *::before, .modulex-hizmet-sure-karsilastir *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-hizmet-sure-karsilastir";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const modSec = (s, P, az) => {
+        const d = [...s.querySelectorAll("[data-mod-sec]")];
+        if (d.length < 2) return;
+        s.classList.add(P + "--js");
+        const kartlar = [...s.querySelectorAll("." + P + "-bilet")];
+        const sec = (m, oynat) => {
+          d.forEach((x, i) => { const on = x.dataset.modSec === m; x.setAttribute("aria-checked", String(on)); x.tabIndex = on ? 0 : -1; });
+          s.classList.toggle(P + "--acil", m === "acil");
+          kartlar.forEach((k) => {
+            const R = [...k.querySelectorAll("[data-mod]")];
+            const vr = R.some((r) => r.dataset.mod === m);
+            R.forEach((r) => {
+              const gor = !vr || r.dataset.mod === m;
+              r.hidden = !gor;
+              r.classList.remove(P + "--gel");
+              if (gor && oynat && !az) { void r.offsetWidth; r.classList.add(P + "--gel"); }
+            });
+          });
+        };
+        d.forEach((x, i) => {
+          x.addEventListener("click", () => sec(x.dataset.modSec, true));
+          x.addEventListener("keydown", (e) => {
+            if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(e.key)) return;
+            e.preventDefault();
+            const n = d[(i + 1) % d.length];
+            n.focus();
+            sec(n.dataset.modSec, true);
+          });
+        });
+        sec(d[0].dataset.modSec);
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      modSec(s, P, az);
+    });
+  })();
+</script>

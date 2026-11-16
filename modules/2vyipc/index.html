@@ -1,0 +1,110 @@
+<section class="modulex-yorum-rol-filtre{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-yorum-rol-filtre-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* yorum-rol-filtre — Kim konuşuyor sorusunu öne alır: yorum-sekme-kisi tek kişiyi seçer, burada aynı roldeki birden çok yorum birlikte süzülür (çoklu görünür kart); rol veri değerinden türetilir, kart sekme kulakçıklı klasör biçimi. */
+  .modulex-yorum-rol-filtre { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-yorum-rol-filtre *, .modulex-yorum-rol-filtre *::before, .modulex-yorum-rol-filtre *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-yorum-rol-filtre :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-yorum-rol-filtre :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-yorum-rol-filtre :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-yorum-rol-filtre :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-yorum-rol-filtre img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-yorum-rol-filtre) img { height: auto; }
+  .modulex-yorum-rol-filtre [hidden] { display: none !important; }
+  .modulex-yorum-rol-filtre :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-yorum-rol-filtre :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-yorum-rol-filtre-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-yorum-rol-filtre-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-yorum-rol-filtre--bassiz .modulex-yorum-rol-filtre-bas { display: none; }
+  .modulex-yorum-rol-filtre-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-yorum-rol-filtre-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-yorum-rol-filtre-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-yorum-rol-filtre-bas { max-width: 780px; margin-inline: auto; text-align: center; justify-items: center; }
+  .modulex-yorum-rol-filtre-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-yorum-rol-filtre-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-yorum-rol-filtre-dugme:hover { transform: translateY(-2px); }
+  .modulex-yorum-rol-filtre-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-yorum-rol-filtre-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-yorum-rol-filtre-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-yorum-rol-filtre-ad { font-weight: 700; }
+  .modulex-yorum-rol-filtre-kisi { display: grid; gap: 2px; min-width: 0; }
+  .modulex-yorum-rol-filtre-unvan { color: --muted--; font-size: 0.88rem; line-height: 1.45; }
+  .modulex-yorum-rol-filtre-puan { display: flex; gap: 2px; color: --yildiz--; }
+  .modulex-yorum-rol-filtre-puan .material-symbols-outlined { font-size: 20px; font-variation-settings: "FILL" 1; }
+  .modulex-yorum-rol-filtre-yildiz--bos { opacity: 0.3; }
+  .modulex-yorum-rol-filtre-avatar { flex: none; width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
+  .modulex-yorum-rol-filtre-harf { display: inline-grid; place-items: center; background: color-mix(in srgb, --accent-- 18%, --kartBg--); color: --accentInk--; font-weight: 800; letter-spacing: 0.02em; }
+  .modulex-yorum-rol-filtre-yazar { display: flex; align-items: center; gap: 12px; }
+
+  .modulex-yorum-rol-filtre-suzgec { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-block-end: clamp(30px, 4vw, 44px); }
+  .modulex-yorum-rol-filtre:not(.modulex-yorum-rol-filtre--js) .modulex-yorum-rol-filtre-suzgec { display: none; }
+  .modulex-yorum-rol-filtre-cip { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding-block: 8px; padding-inline: 16px 10px; border: 1px solid --cizgi--; border-radius: 999px; background: --bg--; color: --text--; font: inherit; font-weight: 700; transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease; }
+  .modulex-yorum-rol-filtre-cip:hover { border-color: --accent--; }
+  .modulex-yorum-rol-filtre-cip[aria-pressed="true"] { border-color: --text--; background: --text--; color: --bg--; }
+  .modulex-yorum-rol-filtre-sayi { min-width: 26px; padding: 1px 7px; border-radius: 999px; background: --kartBg--; color: --text--; font-size: 0.78rem; font-variant-numeric: tabular-nums; text-align: center; }
+  .modulex-yorum-rol-filtre-cip[aria-pressed="true"] .modulex-yorum-rol-filtre-sayi { background: color-mix(in srgb, --bg-- 22%, transparent); color: inherit; }
+  .modulex-yorum-rol-filtre-nokta { flex: none; width: 10px; height: 10px; border-radius: 50%; background: color-mix(in srgb, --accent-- var(--ton, 100%), --text--); }
+  .modulex-yorum-rol-filtre-izgara { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 46px 22px; align-items: start; padding-block-start: 30px; }
+  .modulex-yorum-rol-filtre-kart { position: relative; display: grid; --rk: color-mix(in srgb, --accent-- var(--ton, 100%), --text--); }
+  .modulex-yorum-rol-filtre-kart.modulex-yorum-rol-filtre--gel { animation: modulex-yorum-rol-filtre-gel 0.45s ease both; animation-delay: calc(var(--i) * 40ms); }
+  .modulex-yorum-rol-filtre-kulak { position: absolute; inset-block-end: 100%; inset-inline-start: 0; display: inline-flex; align-items: center; gap: 8px; max-width: 80%; padding-block: 7px 5px; padding-inline: 14px 18px; border-radius: 12px 12px 0 0; background: --kartBg--; color: --text--; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+  .modulex-yorum-rol-filtre-kulak .modulex-yorum-rol-filtre-nokta { background: var(--rk); }
+  .modulex-yorum-rol-filtre-govde { display: grid; gap: 14px; padding: 24px; border-block-start: 4px solid var(--rk); border-radius: 0 --yuvarlak-- --yuvarlak-- --yuvarlak--; background: --kartBg--; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  [dir="rtl"] .modulex-yorum-rol-filtre-govde { border-radius: --yuvarlak-- 0 --yuvarlak-- --yuvarlak--; }
+  .modulex-yorum-rol-filtre-kart:hover .modulex-yorum-rol-filtre-govde { transform: translateY(-3px); box-shadow: 0 20px 34px -26px color-mix(in srgb, --text-- 70%, transparent); }
+  .modulex-yorum-rol-filtre-alinti { line-height: 1.7; }
+  .modulex-yorum-rol-filtre-kim { display: flex; align-items: center; gap: 12px; padding-block-start: 12px; border-block-start: 1px solid --cizgi--; }
+  .modulex-yorum-rol-filtre-avatar { width: 42px; height: 42px; font-size: 0.85rem; }
+  @keyframes modulex-yorum-rol-filtre-gel { from { opacity: 0; transform: translateY(12px) scale(0.98); } to { opacity: 1; transform: none; } }
+  @media (max-width: 768px) {
+    .modulex-yorum-rol-filtre-suzgec { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; padding-block-end: 4px; scrollbar-width: none; }
+    .modulex-yorum-rol-filtre-cip { flex: none; }
+    .modulex-yorum-rol-filtre-govde { padding: 20px; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-yorum-rol-filtre :is(.modulex-yorum-rol-filtre-baslik, .modulex-yorum-rol-filtre-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-yorum-rol-filtre-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-yorum-rol-filtre { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-yorum-rol-filtre *, .modulex-yorum-rol-filtre *::before, .modulex-yorum-rol-filtre *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-yorum-rol-filtre";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const rolSuz = (s, P, az) => {
+        const c = [...s.querySelectorAll("[data-suz]")];
+        const k = [...s.querySelectorAll("[data-rol]")];
+        if (c.length < 2) return;
+        s.classList.add(P + "--js");
+        const sec = (v, oynat) => {
+          c.forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.suz === v)));
+          k.forEach((x) => {
+            const gor = !v || x.dataset.rol === v;
+            x.hidden = !gor;
+            x.classList.remove(P + "--gel");
+            if (gor && oynat && !az) { void x.offsetWidth; x.classList.add(P + "--gel"); }
+          });
+        };
+        c.forEach((x) => x.addEventListener("click", () => sec(x.dataset.suz, true)));
+        sec("", false);
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      rolSuz(s, P, az);
+    });
+  })();
+</script>

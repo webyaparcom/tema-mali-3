@@ -1,0 +1,115 @@
+<section class="modulex-ekip-brans-raf{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-ekip-brans-raf-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* ekip-brans-raf — Çok satırlı, satır başına bağımsız kaydırma: ekip-portre-ray tek şerit, ekip-rehber gruplu ama sabit ızgara; burada her branş ayrı bir yatay raf (Netflix satırı) ve raf tahtası alt çizgisi — öğretmen kadrosu branş branş gezilir. */
+  .modulex-ekip-brans-raf { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-ekip-brans-raf *, .modulex-ekip-brans-raf *::before, .modulex-ekip-brans-raf *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-ekip-brans-raf :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-ekip-brans-raf :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-ekip-brans-raf :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-ekip-brans-raf :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-ekip-brans-raf img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-ekip-brans-raf) img { height: auto; }
+  .modulex-ekip-brans-raf [hidden] { display: none !important; }
+  .modulex-ekip-brans-raf :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-ekip-brans-raf :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-ekip-brans-raf-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-ekip-brans-raf-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-ekip-brans-raf--bassiz .modulex-ekip-brans-raf-bas { display: none; }
+  .modulex-ekip-brans-raf-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-ekip-brans-raf-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-ekip-brans-raf-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-ekip-brans-raf-bas { max-width: 760px; }
+  .modulex-ekip-brans-raf-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-ekip-brans-raf-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-ekip-brans-raf-dugme:hover { transform: translateY(-2px); }
+  .modulex-ekip-brans-raf-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-ekip-brans-raf-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-ekip-brans-raf-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-ekip-brans-raf-raflar { display: grid; gap: clamp(30px, 4vw, 48px); }
+  .modulex-ekip-brans-raf-raf { display: grid; gap: 14px; }
+  .modulex-ekip-brans-raf-rbas { display: flex; align-items: center; gap: 12px; }
+  .modulex-ekip-brans-raf-rad { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 750; }
+  .modulex-ekip-brans-raf-rsay { display: inline-grid; place-items: center; min-width: 30px; height: 30px; padding: 0 8px; border-radius: 8px; background: --vurguBg--; color: --vurguText--; font-size: 0.85rem; font-weight: 800; }
+  .modulex-ekip-brans-raf-rdug { display: none; gap: 6px; margin-inline-start: auto; }
+  .modulex-ekip-brans-raf-raf--tasar .modulex-ekip-brans-raf-rdug { display: inline-flex; }
+  .modulex-ekip-brans-raf-ok { display: inline-grid; place-items: center; width: 38px; height: 38px; border: 1px solid --cizgi--; border-radius: 10px; background: --bg--; color: --text--; transition: background-color 0.25s ease, color 0.25s ease, opacity 0.25s ease; }
+  .modulex-ekip-brans-raf-ok:hover:not(:disabled) { background: --accent--; color: --accentText--; }
+  .modulex-ekip-brans-raf-ok:disabled { opacity: 0.3; cursor: default; }
+  .modulex-ekip-brans-raf-sira { position: relative; display: flex; align-items: flex-end; gap: 16px; padding: 4px 6px 0; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; border-block-end: 8px solid color-mix(in srgb, --accent-- 40%, --text--); border-radius: 0 0 4px 4px; box-shadow: 0 14px 16px -14px color-mix(in srgb, --text-- 70%, transparent); }
+  .modulex-ekip-brans-raf-sira::-webkit-scrollbar { display: none; }
+  .modulex-ekip-brans-raf-kitap { flex: 0 0 168px; display: grid; gap: 8px; padding-block-end: 12px; scroll-snap-align: start; transform-origin: 50% 100%; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .modulex-ekip-brans-raf-kitap:hover { transform: translateY(-6px) rotate(-1.5deg); }
+  .modulex-ekip-brans-raf-foto { width: 100%; aspect-ratio: 4 / 5; border-radius: 10px 10px 4px 4px; object-fit: cover; font-size: 2rem; box-shadow: 0 10px 18px -14px color-mix(in srgb, --text-- 80%, transparent); }
+  .modulex-ekip-brans-raf-etiket { display: grid; gap: 0; }
+  .modulex-ekip-brans-raf-etiket .modulex-ekip-brans-raf-ad { font-size: 0.95rem; }
+  .modulex-ekip-brans-raf-etiket .modulex-ekip-brans-raf-unvan { font-size: 0.8rem; }
+  @media (max-width: 768px) {
+    .modulex-ekip-brans-raf-kitap { flex-basis: 132px; }
+    .modulex-ekip-brans-raf-rad { font-size: 1.1rem; }
+  }
+  /* img width/height öznitelikleri CSS yüksekliği olur — aspect-ratio'nun çalışması için yükseklik auto (modül kuralı ezebilir) */
+  :where(.modulex-ekip-brans-raf) img { height: auto; }
+  .modulex-ekip-brans-raf-foto { min-width: 0; }
+  .modulex-ekip-brans-raf-bag { color: inherit; text-decoration: none; }
+  .modulex-ekip-brans-raf-bag:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .modulex-ekip-brans-raf-harf { display: grid; place-items: center; background-color: --vurguBg--; color: --vurguText--; font-weight: 800; letter-spacing: 0.02em; }
+  .modulex-ekip-brans-raf-sosyal { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-ekip-brans-raf-slink { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-width: 40px; min-height: 40px; padding: 0 10px; border: 1px solid --cizgi--; border-radius: 999px; color: inherit; font-size: 0.88rem; text-decoration: none; transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease; }
+  .modulex-ekip-brans-raf-slink:hover { background-color: --accent--; border-color: --accent--; color: --accentText--; }
+  .modulex-ekip-brans-raf-slink .material-symbols-outlined { font-size: 19px; }
+  .modulex-ekip-brans-raf-syazi { overflow-wrap: anywhere; }
+  .modulex-ekip-brans-raf-ad { font-size: 1.12rem; font-weight: 750; line-height: 1.3; }
+  .modulex-ekip-brans-raf-unvan { color: --accentInk--; font-size: 0.92rem; font-weight: 650; }
+  .modulex-ekip-brans-raf-bio { color: --muted--; font-size: 0.95rem; line-height: 1.65; }
+  .modulex-ekip-brans-raf-bolum { color: --muted--; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-ekip-brans-raf :is(.modulex-ekip-brans-raf-baslik, .modulex-ekip-brans-raf-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-ekip-brans-raf-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-ekip-brans-raf { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-ekip-brans-raf *, .modulex-ekip-brans-raf *::before, .modulex-ekip-brans-raf *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-ekip-brans-raf";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const raflar = (s, P, az) => {
+        s.querySelectorAll("." + P + "-raf").forEach((r) => {
+          const ray = r.querySelector("[data-raf]");
+          const b = [...r.querySelectorAll("[data-raf-yon]")];
+          if (!ray || !b.length) return;
+          const durum = () => {
+            const max = ray.scrollWidth - ray.clientWidth - 2;
+            const x = Math.abs(ray.scrollLeft);
+            b.forEach((d) => { d.disabled = max <= 0 || (d.dataset.rafYon === "geri" ? x <= 2 : x >= max); });
+            r.classList.toggle(P + "-raf--tasar", max > 0);
+          };
+          b.forEach((d) => d.addEventListener("click", () => {
+            const rtl = getComputedStyle(ray).direction === "rtl";
+            ray.scrollBy({ left: (d.dataset.rafYon === "ileri" ? 1 : -1) * (rtl ? -1 : 1) * ray.clientWidth * 0.8, behavior: az ? "auto" : "smooth" });
+          }));
+          ray.addEventListener("scroll", durum, { passive: true });
+          window.addEventListener("resize", durum);
+          durum();
+        });
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      raflar(s, P, az);
+    });
+  })();
+</script>
