@@ -3,17 +3,23 @@
   "name": {
     "tr": "Vizyon",
     "en": "Vision",
-    "ar": "الرؤية"
+    "ar": "الرؤية",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "description": {
     "tr": "Vizyonumuz",
     "en": "Our vision",
-    "ar": "رؤيتنا"
+    "ar": "رؤيتنا",
+    "de": "Unsere Vision",
+    "ru": "Наше видение"
   },
   "keyword": {
     "tr": "Vizyon",
     "en": "vision, our vision, goals",
-    "ar": "الرؤية, رؤيتنا, الأهداف"
+    "ar": "الرؤية, رؤيتنا, الأهداف",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "path": "vizyon",
   "icon": "visibility",
@@ -29,12 +35,16 @@
   "text": {
     "tr": "<h2>Vizyonumuz</h2>\n<p>Küçük işletmeler için sakin ve düzenli bir mali müşavirlik ofisi olmak.</p>",
     "en": "<h2>Our vision</h2>\n<p>To be a calm and orderly accounting office for small businesses.</p>",
-    "ar": "<h2>رؤيتنا</h2>\n<p>أن نكون مكتب محاسبة هادئًا ومنظمًا للمنشآت الصغيرة.</p>"
+    "ar": "<h2>رؤيتنا</h2>\n<p>أن نكون مكتب محاسبة هادئًا ومنظمًا للمنشآت الصغيرة.</p>",
+    "de": "<h2>Unsere Vision</h2>\n<p>Ein ruhiges, geordnetes Steuerberatungsbüro für kleine Unternehmen zu sein.</p>",
+    "ru": "<h2>Наше видение</h2>\n<p>Быть спокойной и организованной бухгалтерско-консалтинговой фирмой для малого бизнеса.</p>"
   },
   "title": {
     "tr": "Vizyon",
     "en": "Vision",
-    "ar": "الرؤية"
+    "ar": "الرؤية",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "date": "2026-11-16T16:02:10.300Z",
   "update": "2026-11-16T16:14:18.018Z",

@@ -5,12 +5,16 @@
       "name": {
         "tr": "Hizmetler",
         "en": "Services",
-        "ar": "الخدمات"
+        "ar": "الخدمات",
+        "de": "Leistungen",
+        "ru": "Услуги"
       },
       "description": {
         "tr": "Bilgiler genel bilgilendirme amaçlıdır; mali müşavirlik görüşü yerine geçmez. İçerik kurgusaldır.",
         "en": "Information is general and does not replace professional accounting advice. Content is fictional.",
-        "ar": "المعلومات عامة ولا تغني عن الاستشارة المحاسبية المهنية. المحتوى افتراضي."
+        "ar": "المعلومات عامة ولا تغني عن الاستشارة المحاسبية المهنية. المحتوى افتراضي.",
+        "de": "Die Angaben dienen der allgemeinen Information; sie ersetzen keine Steuerberatung. Die Inhalte sind fiktiv.",
+        "ru": "Информация носит общий характер и не заменяет заключения налогового консультанта. Содержание вымышленное."
       },
       "path": "hizmetler",
       "icon": "work",
@@ -30,7 +34,9 @@
       "name": {
         "tr": "Ofis",
         "en": "Office",
-        "ar": "المكتب"
+        "ar": "المكتب",
+        "de": "Büro",
+        "ru": "Офис"
       },
       "status": "play",
       "id": "hakkimizda",
@@ -52,7 +58,9 @@
       "description": {
         "tr": "Ofisin sayıları ve mükellef görüşleri (kurgusal).",
         "en": "The office in numbers and client views (fictional).",
-        "ar": "المكتب بالأرقام وآراء العملاء (افتراضية)."
+        "ar": "المكتب بالأرقام وآراء العملاء (افتراضية).",
+        "de": "Zahlen des Büros und Stimmen der Mandanten (fiktiv).",
+        "ru": "Цифры офиса и отзывы клиентов (вымышленные)."
       }
     },
     {
@@ -60,12 +68,16 @@
       "name": {
         "tr": "Kadro",
         "en": "Team",
-        "ar": "الفريق"
+        "ar": "الفريق",
+        "de": "Team",
+        "ru": "Команда"
       },
       "description": {
         "tr": "Vergi, bordro ve kayıt uzmanları (kurgusal).",
         "en": "Tax, payroll and records specialists (fictional).",
-        "ar": "مختصو الضرائب والرواتب والقيود (افتراضيون)."
+        "ar": "مختصو الضرائب والرواتب والقيود (افتراضيون).",
+        "de": "Fachleute für Steuern, Lohnbuchhaltung und Registrierung (fiktiv).",
+        "ru": "Специалисты по налогам, расчёту зарплаты и регистрации (вымышленные)."
       },
       "path": "ekip",
       "icon": "groups",
@@ -86,12 +98,16 @@
       "name": {
         "tr": "Randevu",
         "en": "Appointment",
-        "ar": "موعد"
+        "ar": "موعد",
+        "de": "Termin",
+        "ru": "Запись"
       },
       "description": {
         "tr": "Ofis randevusu (demo form).",
         "en": "Office appointment (demo form).",
-        "ar": "موعد في المكتب (نموذج تجريبي)."
+        "ar": "موعد في المكتب (نموذج تجريبي).",
+        "de": "Bürotermin (Demo-Formular).",
+        "ru": "Запись в офис (демо-форма)."
       },
       "path": "teklif-al",
       "icon": "request_quote",
@@ -110,7 +126,9 @@
       "name": {
         "tr": "İletişim",
         "en": "Contact",
-        "ar": "اتصل بنا"
+        "ar": "اتصل بنا",
+        "de": "Kontakt",
+        "ru": "Контакты"
       },
       "status": "play",
       "id": "iletisim",
@@ -131,7 +149,9 @@
       "description": {
         "tr": "Adres, telefon ve çalışma saatleri.",
         "en": "Address, phone and opening hours.",
-        "ar": "العنوان والهاتف وساعات العمل."
+        "ar": "العنوان والهاتف وساعات العمل.",
+        "de": "Adresse, Telefon und Öffnungszeiten.",
+        "ru": "Адрес, телефон и часы работы."
       }
     }
   ],

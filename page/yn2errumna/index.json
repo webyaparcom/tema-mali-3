@@ -3,17 +3,23 @@
   "name": {
     "tr": "Hizmetler",
     "en": "Services",
-    "ar": "الخدمات"
+    "ar": "الخدمات",
+    "de": "Leistungen",
+    "ru": "Услуги"
   },
   "description": {
     "tr": "Bilgiler genel bilgilendirme amaçlıdır; mali müşavirlik görüşü yerine geçmez. İçerik kurgusaldır.",
     "en": "Information is general and does not replace professional accounting advice. Content is fictional.",
-    "ar": "المعلومات عامة ولا تغني عن الاستشارة المحاسبية المهنية. المحتوى افتراضي."
+    "ar": "المعلومات عامة ولا تغني عن الاستشارة المحاسبية المهنية. المحتوى افتراضي.",
+    "de": "Die Angaben dienen der allgemeinen Information; sie ersetzen keine Steuerberatung. Die Inhalte sind fiktiv.",
+    "ru": "Информация носит общий характер и не заменяет заключения налогового консультанта. Содержание вымышленное."
   },
   "keyword": {
     "tr": "Kurgusal demo verileri",
     "en": "Fictional demo figures",
-    "ar": "بيانات تجريبية افتراضية"
+    "ar": "بيانات تجريبية افتراضية",
+    "de": "Fiktive Demodaten",
+    "ru": "Условные демо-данные"
   },
   "path": "hizmetler",
   "icon": "work",
@@ -33,7 +39,9 @@
   "title": {
     "tr": "Hizmetler",
     "en": "Services",
-    "ar": "الخدمات"
+    "ar": "الخدمات",
+    "de": "Leistungen",
+    "ru": "Услуги"
   },
   "date": "2026-11-16T16:02:10.442Z",
   "update": "2026-11-16T16:14:17.999Z"

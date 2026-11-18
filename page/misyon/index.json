@@ -3,17 +3,23 @@
   "name": {
     "tr": "Misyon",
     "en": "Mission",
-    "ar": "المهمة"
+    "ar": "المهمة",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "description": {
     "tr": "Misyonumuz",
     "en": "Our mission",
-    "ar": "مهمتنا"
+    "ar": "مهمتنا",
+    "de": "Unsere Mission",
+    "ru": "Наша миссия"
   },
   "keyword": {
     "tr": "Misyon",
     "en": "mission, our mission, corporate responsibility",
-    "ar": "الرسالة, رسالتنا, المسؤولية المؤسسية"
+    "ar": "الرسالة, رسالتنا, المسؤولية المؤسسية",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "path": "misyon",
   "icon": "flag",
@@ -29,12 +35,16 @@
   "text": {
     "tr": "<h2>Misyonumuz</h2>\n<p>İşletmelerin mali yükümlülüklerini takvime bağlı, öngörülebilir ve yazılı biçimde yönetmek.</p>",
     "en": "<h2>Our mission</h2>\n<p>To manage businesses’ financial obligations on a calendar, predictably and in writing.</p>",
-    "ar": "<h2>مهمتنا</h2>\n<p>إدارة الالتزامات المالية للمنشآت وفق تقويم وبشكل متوقع ومكتوب.</p>"
+    "ar": "<h2>مهمتنا</h2>\n<p>إدارة الالتزامات المالية للمنشآت وفق تقويم وبشكل متوقع ومكتوب.</p>",
+    "de": "<h2>Unsere Mission</h2>\n<p>Die finanziellen Verpflichtungen von Unternehmen kalendergebunden, planbar und schriftlich zu verwalten.</p>",
+    "ru": "<h2>Наша миссия</h2>\n<p>Управлять финансовыми обязательствами компаний по календарю, предсказуемо и в письменной форме.</p>"
   },
   "title": {
     "tr": "Misyon",
     "en": "Mission",
-    "ar": "المهمة"
+    "ar": "المهمة",
+    "de": "Mission",
+    "ru": "Миссия"
   },
   "date": "2026-11-16T16:02:10.300Z",
   "update": "2026-11-16T16:14:18.017Z",
