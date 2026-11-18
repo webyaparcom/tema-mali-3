@@ -3,17 +3,23 @@
   "name": {
     "tr": "Randevu",
     "en": "Appointment",
-    "ar": "موعد"
+    "ar": "موعد",
+    "de": "Termin",
+    "ru": "Запись"
   },
   "description": {
     "tr": "Ofis randevusu (demo form).",
     "en": "Office appointment (demo form).",
-    "ar": "موعد في المكتب (نموذج تجريبي)."
+    "ar": "موعد في المكتب (نموذج تجريبي).",
+    "de": "Bürotermin (Demo-Formular).",
+    "ru": "Запись в офис (демо-форма)."
   },
   "keyword": {
     "tr": "teklif",
     "en": "quote",
-    "ar": "عرض سعر"
+    "ar": "عرض سعر",
+    "de": "Angebot",
+    "ru": "оценка"
   },
   "path": "teklif-al",
   "icon": "request_quote",
@@ -32,7 +38,9 @@
   "title": {
     "tr": "Randevu",
     "en": "Appointment",
-    "ar": "موعد"
+    "ar": "موعد",
+    "de": "Termin",
+    "ru": "Запись"
   },
   "date": "2026-11-16T16:02:10.456Z",
   "update": "2026-11-16T16:14:18.010Z"

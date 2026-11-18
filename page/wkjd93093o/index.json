@@ -3,17 +3,23 @@
   "name": {
     "tr": "Kadro",
     "en": "Team",
-    "ar": "الفريق"
+    "ar": "الفريق",
+    "de": "Team",
+    "ru": "Команда"
   },
   "description": {
     "tr": "Vergi, bordro ve kayıt uzmanları (kurgusal).",
     "en": "Tax, payroll and records specialists (fictional).",
-    "ar": "مختصو الضرائب والرواتب والقيود (افتراضيون)."
+    "ar": "مختصو الضرائب والرواتب والقيود (افتراضيون).",
+    "de": "Fachleute für Steuern, Lohnbuchhaltung und Registrierung (fiktiv).",
+    "ru": "Специалисты по налогам, расчёту зарплаты и регистрации (вымышленные)."
   },
   "keyword": {
     "tr": "ekip, kadro",
     "en": "team, staff",
-    "ar": "فريق، طاقم"
+    "ar": "فريق، طاقم",
+    "de": "Team, Personal",
+    "ru": "команда, персонал"
   },
   "path": "ekip",
   "icon": "groups",
@@ -33,7 +39,9 @@
   "title": {
     "tr": "Kadro",
     "en": "Team",
-    "ar": "الفريق"
+    "ar": "الفريق",
+    "de": "Team",
+    "ru": "Команда"
   },
   "date": "2026-11-16T16:02:10.451Z",
   "update": "2026-11-16T16:14:18.006Z"
